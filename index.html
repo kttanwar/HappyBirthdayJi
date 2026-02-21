@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Happy Birthday Poorva 💛</title>
+
+<style>
+:root{
+  --accent:#ff6f9c;
+  --bg1:#ffd6e7;
+  --bg2:#ffeef6;
+  --card:rgba(255,255,255,.95);
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  min-height:100svh;
+  display:grid;
+  place-items:center;
+  font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+  background:radial-gradient(circle at top,var(--bg2),var(--bg1));
+  overflow:hidden;
+}
+
+/* 🌌 STARS BACKGROUND */
+#stars{
+  position:fixed;
+  inset:0;
+  background:url("./assets/gifs/stars-bg.gif") center/cover no-repeat;
+  opacity:.35;
+  z-index:-1;
+}
+
+/* CARD */
+.card{
+  width:min(760px,92vw);
+  max-height:92svh;
+  background:var(--card);
+  border-radius:22px;
+  padding:20px;
+  box-shadow:0 25px 60px rgba(0,0,0,.25);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.page{
+  display:none;
+  text-align:center;
+  animation:fade .6s ease;
+}
+.page.active{display:block}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:none}
+}
+
+h1,h2{
+  margin:10px 0;
+}
+
+p{
+  font-size:clamp(15px,2.6vw,18px);
+  line-height:1.7;
+  margin:10px 0;
+}
+
+img{
+  max-width:100%;
+  max-height:38vh;
+  border-radius:16px;
+  margin:14px auto;
+  display:block;
+}
+
+button{
+  padding:12px 22px;
+  border:none;
+  border-radius:999px;
+  background:var(--accent);
+  color:#fff;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+button.secondary{
+  background:#e5e5e5;
+  color:#333;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  margin-top:12px;
+}
+
+/* GIFT */
+.gift{
+  width:200px;
+  margin:20px auto;
+  cursor:pointer;
+}
+
+/* LETTER */
+.letter{
+  text-align:left;
+  font-family:Georgia,serif;
+  padding:10px;
+  line-height:1.8;
+  max-height:55vh;
+  overflow:auto;
+}
+</style>
+</head>
+
+<body>
+<div id="stars"></div>
+
+<main class="card">
+
+<!-- PAGE 0 -->
+<section class="page active">
+  <h2>Hello Cutuu ji 💛</h2>
+  <p>You're the most amazing and adorable person I have ever met!</p>
+  <p>I made something just for you…</p>
+  <img class="gift" src="./assets/gifs/gift-box.gif" onclick="go(1)">
+  <p><em>Tap the gift 🎁</em></p>
+</section>
+
+<!-- PAGE 1 -->
+<section class="page">
+  <h1>🎉 Happy Birthday Poorva 🎉</h1>
+  <img src="./assets/gifs/birthday-confetti.gif">
+  <p>
+    To the girl who brings calm to my chaos,  
+    warmth to my days,  
+    and love to my life —  
+    simply by being herself 💕
+  </p>
+  <button onclick="go(2)">It’s Your Birthday 🎂</button>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+  <h2>✨ Another Year of You ✨</h2>
+  <img src="./assets/gifs/together.jpg">
+  <p>
+    Another year of you means more growth,  
+    more laughter, more strength,  
+    and memories I’ll always hold close to my heart.
+  </p>
+  <div class="nav">
+    <button class="secondary" onclick="go(1)">⬅ Back</button>
+    <button onclick="go(3)">Next ➡</button>
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page">
+  <h2>👩‍❤️‍👨 Us</h2>
+  <img src="./assets/gifs/couple-holding-hands.gif">
+  <p>
+    More than 4 years of choosing each other.  
+    Of holding hands through every high and low.  
+    And somehow, loving you more with every passing day.
+  </p>
+  <div class="nav">
+    <button class="secondary" onclick="go(2)">⬅ Back</button>
+    <button onclick="go(4)">Next ➡</button>
+  </div>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page">
+  <h2>🧸 A Little Reminder</h2>
+  <img src="./assets/gifs/pooh-celebration.gif">
+  <p>
+    “You are braver than you believe,  
+    stronger than you seem,  
+    and loved more than you will ever know.”
+  </p>
+  <div class="nav">
+    <button class="secondary" onclick="go(3)">⬅ Back</button>
+    <button onclick="go(5)">Next ➡</button>
+  </div>
+</section>
+
+<!-- PAGE 5 -->
+<section class="page">
+  <h2>🎂 Celebrate You</h2>
+  <img src="./assets/gifs/cake.gif">
+  <p><em>There’s one last secret… 💌</em></p>
+  <div class="nav">
+    <button class="secondary" onclick="go(4)">⬅ Back</button>
+    <button onclick="go(6)">Unlock 💛</button>
+  </div>
+</section>
+
+<!-- PAGE 6 -->
+<section class="page">
+  <h2>🔒 One Last Secret</h2>
+  <img src="./assets/gifs/bear-thinking.gif">
+  <p><em>What do I call you, out of love?</em></p>
+  <input id="pwd" type="password"
+    style="padding:12px;border-radius:999px;border:1px solid #ccc;
+           width:70%;text-align:center;font-size:16px">
+  <br><br>
+  <button onclick="unlock()">Unlock 💌</button>
+  <p id="err" style="color:#ff5c8a;display:none">Think again 🧸</p>
+  <div class="nav">
+    <button class="secondary" onclick="go(5)">⬅ Back</button>
+  </div>
+</section>
+
+<!-- PAGE 7 -->
+<section class="page">
+  <img src="./assets/gifs/mickey-entering-heart.gif">
+  <p>
+    You opened the door…  
+    and I walked right into your heart 💛
+  </p>
+</section>
+
+<!-- PAGE 8 -->
+<section class="page">
+  <img src="./assets/gifs/envelope-opening.gif">
+  <h2>💌 My Letter to You</h2>
+  <div class="letter">
+    <p>
+      My <strong>Bubu</strong>,<br>
+      my <strong>Buduk</strong>, <strong>Tamma</strong>, <strong>Gulabo</strong>,<br>
+      my <strong>beautiful</strong>, <strong>gorgeous</strong>, my <strong>love</strong> 💛
+    </p>
+
+    <p>
+      Today is a very, very special day —<br>
+      because <strong>26 years ago, an amazing person came into this world… and that is youuuuuu</strong> ✨<br>
+      And somehow, by God’s grace, that amazing person became <em>mine</em>.
+    </p>
+
+    <p>
+      I don’t just love you —<br>
+      <strong>I philo you</strong> ❤️<br>
+      In the deepest, calmest, most permanent way possible.
+    </p>
+
+    <p>
+      I know main aapko pareshan karta hoon… bohot zyada 😅<br>
+      Aur aapko mujhe bohot jhelna padta hai.<br>
+      But sach mein, ji — I am trying to be better every single day.<br>
+      Because ek cheez mujhe bilkul clear hai:<br>
+      <strong>aap mere saath khush rehte ho</strong>,<br>
+      aur mujhe aapko khush rakhna bohot, bohot pasand hai.
+    </p>
+
+    <p>
+      You are the <strong>most resilient</strong>, <strong>strong</strong>, and <strong>awesome</strong> person I know.<br>
+      I love being with you.<br>
+      Aapke saath sab kuch thoda aur easy lagta hai,<br>
+      aur life thodi aur beautiful ho jaati hai.
+    </p>
+
+    <p>
+      Sach kahu toh, bhagwaan ji ki bahut badi kripa hai ki aap mujhe mile.<br>
+      Mujhe lagta hai aap mere purane acche karmo ka fal ho.<br>
+      Bhagwaan ji ne aapko meri life mein bhej kar<br>
+      mujhe sach mein <strong>kritarth</strong> kar diya.
+    </p>
+
+    <p>
+      Ab meri bas ek hi prayer hai —<br>
+      ki bhagwaan ji mujhe <strong>aapke layak banaye</strong>,<br>
+      aur main aapko poori zindagi aise hi khush dekhta rahu,<br>
+      aapki smile ka reason banta rahu.
+    </p>
+
+    <p>
+      Mere bhagya sach mein khul gaye the jis din aap mujhe mile.<br>
+      Aur main vaada karta hoon ki<br>
+      <strong>I will constantly work towards being my best self — for you, for us.</strong><br>
+      <strong>I will never leave your side.</strong> Ever.
+    </p>
+
+    <p>
+      Meri yahi dua hai ki aap hamesha khush raho,<br>
+      aapki life hamesha pyar, sukoon aur smiles se bhari rahe.<br>
+      <strong>May you truly have the best life.</strong>
+    </p>
+
+    <p>
+      I wish aaj main aapke saath hota,<br>
+      but koi baat nahi — thoda aur time hai.<br>
+      We <em>will</em> get there, by God’s grace.<br>
+      Tab tak, aap mere dil mein hi raho —<br>
+      waise bhi, wahaan toh aap permanent ho hi ❤️
+    </p>
+
+    <p>
+      Aur ek baar shaadi ho jaaye na…<br>
+      phir toh mazze hi mazze.<br>
+      Dil ke saath-saath zindagi bhi saath mein hogi.<br>
+      Sab kuch saath karenge.<br>
+      Har chhoti khushi, har bada sapna — together.
+    </p>
+
+    <p>
+      Once again…<br>
+      <strong>Happy Birthday, my Bubu</strong> 🎂💛<br>
+      <strong>I philo you.</strong><br>
+      Always.
+    </p>
+    <br />
+    <br />
+    <br />
+  </div>
+</section>
+
+</main>
+
+<script>
+const pages=document.querySelectorAll(".page");
+function go(n){
+  pages.forEach((p,i)=>p.classList.toggle("active",i===n));
+}
+function unlock(){
+  const v=document.getElementById("pwd").value.trim().toLowerCase();
+  if(v==="bubu"){
+    go(7);
+    
+    setTimeout(()=>go(8),2500);
+  }else{
+    document.getElementById("err").style.display="block";
+  }
+}
+</script>
+</body>
+</html>
